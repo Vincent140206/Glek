@@ -10,6 +10,22 @@ class CustomDraggableScrollableSheet extends StatefulWidget {
 
 class _CustomDraggableScrollableSheetState extends State<CustomDraggableScrollableSheet> {
   bool isActive = true;
+
+  TimeOfDay? selectedTime;
+
+  void _pickTime() async {
+    final TimeOfDay? time = await showTimePicker(
+      context: context,
+      initialTime: selectedTime ?? TimeOfDay.now(),
+    );
+
+    if (time != null) {
+      setState(() {
+        selectedTime = time;
+      });
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return DraggableScrollableSheet(
@@ -64,7 +80,9 @@ class _CustomDraggableScrollableSheetState extends State<CustomDraggableScrollab
                             ),
                           ),
                           Spacer(),
-                          Icon(Icons.add)
+                          IconButton(
+                              onPressed: _pickTime , icon: Icon(Icons.add)
+                          ),
                         ],
                       ),
                       SizedBox(height: 10,),

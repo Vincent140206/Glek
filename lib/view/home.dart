@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:glek/components/draggable_scrollable_sheet.dart';
+import 'package:glek/view/goals.dart';
 import '../components/circular_progress.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -25,11 +26,9 @@ class _HomeScreenState extends State<HomeScreen> {
                   const SizedBox(height: 30),
                   Row(
                     children: [
-                      const CircleAvatar(
+                      CircleAvatar(
                         radius: 25,
-                        foregroundImage: AssetImage(
-                          'assets/images/profile.png',
-                        ),
+                        backgroundColor: Colors.grey[400]!,
                       ),
                       const SizedBox(width: 10),
                       const Column(
@@ -87,13 +86,18 @@ class _HomeScreenState extends State<HomeScreen> {
                   ),
                   SizedBox(height: 20),
                   Center(
-                    child: CircularProgressWidget(
-                      percentage: 65,
-                      subtitle: '700 ml more',
-                      size: 220,
-                      progressColor: Color(0XFFA5C6E0),
-                      backgroundColor: Color(0XFFDDE9E8),
-                      strokeWidth: 25.0,
+                    child: GestureDetector(
+                      onTap: () {
+                        Navigator.push(context, MaterialPageRoute(builder: (context) => Goals()));
+                      },
+                      child: CircularProgressWidget(
+                        percentage: 65,
+                        subtitle: '700 ml more',
+                        size: 220,
+                        progressColor: Color(0XFFA5C6E0),
+                        backgroundColor: Color(0XFFDDE9E8),
+                        strokeWidth: 25.0,
+                      ),
                     ),
                   ),
                   SizedBox(height: 200),
