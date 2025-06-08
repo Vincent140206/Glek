@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:glek/components/draggable_scrollable_sheet.dart';
 import 'package:glek/view/goals.dart';
+import 'package:glek/view/profile.dart';
+import 'package:glek/view/stats.dart';
 import '../components/circular_progress.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -26,9 +28,14 @@ class _HomeScreenState extends State<HomeScreen> {
                   const SizedBox(height: 30),
                   Row(
                     children: [
-                      CircleAvatar(
-                        radius: 25,
-                        backgroundColor: Colors.grey[400]!,
+                      GestureDetector(
+                        onTap: () {
+                          Navigator.push(context, MaterialPageRoute(builder: (context) => Profile()));
+                        },
+                        child: CircleAvatar(
+                          radius: 25,
+                          backgroundColor: Colors.grey[400]!,
+                        ),
                       ),
                       const SizedBox(width: 10),
                       const Column(
@@ -53,7 +60,9 @@ class _HomeScreenState extends State<HomeScreen> {
                       ),
                       const Spacer(),
                       IconButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          Navigator.push(context, MaterialPageRoute(builder: (context) => StatsScreen()));
+                        },
                         icon: Image.asset(
                           'assets/icons/Menu.png',
                           width: 24,

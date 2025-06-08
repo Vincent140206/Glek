@@ -1,5 +1,5 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:glek/view/stats.dart';
 
 import '../components/circular_progress.dart';
 import '../components/funfact.dart';
@@ -40,7 +40,9 @@ class _GoalsState extends State<Goals> {
                   ),
                 ),
                 IconButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.push(context, MaterialPageRoute(builder: (context) => StatsScreen()));
+                  },
                   icon: Image.asset(
                     'assets/icons/Menu.png',
                     width: 24,
@@ -74,7 +76,7 @@ class _GoalsState extends State<Goals> {
               backgroundColor: Color(0XFFDDE9E8),
               strokeWidth: 25.0,
             ),
-            SizedBox(height: 60,),
+            SizedBox(height: 90,),
             SizedBox(
               height: 120,
               child: ListView.builder(
