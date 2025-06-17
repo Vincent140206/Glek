@@ -99,14 +99,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       onTap: () {
                         Navigator.push(context, MaterialPageRoute(builder: (context) => Goals()));
                       },
-                      child: CircularProgressWidget(
-                        percentage: 65,
-                        subtitle: '700 ml more',
-                        size: 220,
-                        progressColor: Color(0XFFA5C6E0),
-                        backgroundColor: Color(0XFFDDE9E8),
-                        strokeWidth: 25.0,
-                      ),
+                      child: CircularProgressWidget(),
                     ),
                   ),
                   SizedBox(height: 200),

@@ -68,14 +68,7 @@ class _GoalsState extends State<Goals> {
               ),
             ),
             SizedBox(height: 50,),
-            CircularProgressWidget(
-              percentage: 65,
-              subtitle: '700 ml more',
-              size: 220,
-              progressColor: Color(0XFFA5C6E0),
-              backgroundColor: Color(0XFFDDE9E8),
-              strokeWidth: 25.0,
-            ),
+            CircularProgressWidget(),
             SizedBox(height: 90,),
             SizedBox(
               height: 120,
